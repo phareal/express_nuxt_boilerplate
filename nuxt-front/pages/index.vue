@@ -7,6 +7,7 @@
         <VuesaxLogo />
       </header>
       <h1 class="title">Nuxt.js + Vuesax</h1>
+      <p class="subtitle">My boilerplate</p>
       <h2 class="subtitle">
         <a href="https://vuesax.com/">Vuesax</a> is a framework of ui components
         for <a href="https://vuejs.org/">Vuejs</a>, It was created to make new
