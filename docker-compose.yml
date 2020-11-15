@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  mongo:
+    restart: always
+    container_name: mongo_db_container
+    image: mongo
+    ports:
+      - 27017:27017
+
+  nuxt-front:
+    container_name: nuxt_app
+    restart: always
+    ports:
+      - "8002:3000"
+    build:
+      context: ./nuxt-front
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./nuxt-front:/usr/app/nuxt-front
+      - /usr/app/nuxt-front/node_modules
+      - /usr/app/nuxt-front/.nuxt
+    depends_on:
+      - nuxt-api
+
+  nuxt-api:
+    restart: always
+    container_name: express_server_container
+    build:
+      context: ./nuxt-api
+      dockerfile: Dockerfile
+    volumes:
+       - ./nuxt-api:/usr/app/nuxt-api
+       - /usr/app/nuxt-api/node_modules
+    ports:
+      - 8003:8003
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/receivpe

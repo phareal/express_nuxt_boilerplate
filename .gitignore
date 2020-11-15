@@ -1,0 +1,5 @@
+nuxt-api/node_modules
+nuxt-front/node_modules
+nuxt-front/.nuxt
+nuxt-front/dist
+.idea
