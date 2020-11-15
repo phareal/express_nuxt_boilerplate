@@ -72,4 +72,4 @@ Remember to add tests for your change if possible. ️
 
 ## 👋 Questions
 
-If you have any questions, feel free to open an issue. Please see the Getting Started guide for [NextJS](https://nextjs.org/docs/getting-started) before submitting an issue.
+If you have any questions, feel free to open an issue. Please see the Getting Started guide for [NuxtJS](https://nuxtjs.org/docs/2.x/get-started/installation) before submitting an issue.
