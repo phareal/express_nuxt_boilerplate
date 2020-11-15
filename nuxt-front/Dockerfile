@@ -1,13 +1,11 @@
 FROM node:12.14.0
 
-
-
 # Create app directory
 
-WORKDIR /usr/app/nuxt-api
+WORKDIR /usr/app/nuxt-front
 
 # Installing dependencies
-COPY package*.json /usr/app/nuxt-api
+COPY package*.json /usr/app/nuxt-front
 RUN npm install
 
 # Copying source files
@@ -15,7 +13,7 @@ COPY . .
 
 # Building app
 # RUN npm run build
-EXPOSE 8000
+EXPOSE 3000
 
 # Running the app
-CMD [ "node", "server.js" ]
+ENTRYPOINT [ "yarn", "dev" ]
